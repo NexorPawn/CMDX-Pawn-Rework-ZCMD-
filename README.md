@@ -28,7 +28,7 @@ There are some small errors as this is a test version, I know about some errors 
 
 Also write what can be corrected, improved, and added. 
 
-
+https://github.com/NexorPawn/CMDX-Pawn-Rework-ZCMD-/releases/tag/v1.0.1-beta
 
 
 
