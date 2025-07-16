@@ -18,12 +18,11 @@ No extra dependencies
 
 **Installation**
 
-1. Download the include file.
-2. Extract it into the pawno/includes/ folder.
-3. Then, include it in your mode using:
-#include <cmdx>
+>1. Download the include file.
+>2. Extract it into the pawno/includes/ > folder.
+>3. Then add the new include to your mod: **<cmdx>**
 
-Note: Disable SSCANF, as this include/plugin provides similar functionality built-in — just under a different function name.
+> Note: Disable SSCANF, as this include/plugin provides similar functionality built-in — just under a different function name.
 
 There are some small errors as this is a test version, I know about some errors and improvements, errors need to be fixed, I will definitely fix them and release a new update!)
 
