@@ -31,6 +31,97 @@ Also write what can be corrected, improved, and added.
 https://github.com/NexorPawn/CMDX-Pawn-Rework-ZCMD-/releases/tag/v1.0.1-beta
 
 
+**How to Use CMDX Command Processor (v1.0.1 Beta)**  
 
+
+
+Hey there! 👋 If you're looking for an easy way to handle commands in SA-MP with aliases and clean parsing, here's a quick guide to get you started with **CMDX**.  
+
+
+
+### **Installation**  
+
+Just drop `cmdx.inc` into your `pawno/includes` folder and add this to your script:  
+
+```pawn
+
+#include <cmdx>
+```  
+
+### **Creating Commands**  
+
+Use `CMD:` (or `COMMAND:`) to define a new command. Example:  
+```pawn
+
+CMD:hello(playerid, params[]) 
+{
+    SendClientMessage(playerid, -1, "Hello, world!");
+    return 1;
+}
+```  
+
+### **Adding Aliases (Shortcuts)**  
+
+Want `/hi` or `/yo` to do the same as `/hello`? Easy!  
+```pawn
+
+// Single alias:
+CMDX_AddAlias("hi", "hello");  
+// Or use the macro (shorter version):
+ALIAS("yo", "hello");  
+```  
+Now, `/hi`, `/yo`, and `/hello` will all work the same way!  
+
+### **Parsing Arguments**  
+
+Need to split command arguments? Use `CMDX_Parse`:  
+```pawn
+
+CMD:givecash(playerid, params[]) 
+{
+    new args[2][64]; // Stores 2 arguments (max 64 chars each)
+    new count = CMDX_Parse(params, args, 2, 64);  
+
+    if(count < 2) 
+    {
+        SendClientMessage(playerid, -1, "Usage: /givecash [playerid] [amount]");
+        return 1;
+    }  
+
+    new targetid = strval(args[0]);
+    new amount = strval(args[1]);
+
+    GivePlayerMoney(targetid, amount);
+    SendClientMessage(playerid, -1, "Money sent!");
+    return 1;
+}
+
+```   
+
+### **Available Macros**  
+
+For quick alias setups, use these shortcuts:  
+```pawn
+ALIAS("pm", "msg");      // /pm = /msg  
+ALS("h", "help");        // /h = /help  
+AL("plus", "add");       // /plus = /add 
+
+```  
+
+### **⚠️ Important Notes**  
+
+- This is a **beta version**! 🚧 Some bugs might exist.  
+- If a command doesn’t work, check `print()` or server logs for errors.  
+- Report issues on GitHub so we can improve it!  
+
+### **🔗 Useful Examples**  
+
+- **Private Message System** (`/pm [id] [text]`)  
+- **Math Command** (`/add [num1] [num2]`)  
+- **Debug Tool** (`/echo [text]` – repeats your args)  
+Check the full demo in `cmdx.pwn` for more!  
+
+**🚀 Ready to try?**  
+Download, test, and let me know what you think! Feedback = faster improvements.  
 
 
