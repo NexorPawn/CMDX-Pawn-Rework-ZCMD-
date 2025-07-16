@@ -1,7 +1,7 @@
 # CMDX-Pawn-Rework-ZCMD-
 A new command processor is being created for pawn samp, based on zcmd
 
-CMDX - This is a stable and extensible command processor for SA-MP, built on zcmd with an emphasis on simplicity, macros, and alias support.
+CMDX - This is a stable and extensible command processor for SA-MP, built on zcmd with an emphasis on simplicity, macros, and alias support..
 
 > Creator: **Nexor**
 > Version: **v1.0.1 Actual (2025)**  
